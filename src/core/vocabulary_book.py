@@ -65,3 +65,11 @@ class VocabularyBook:
             result = False
         return result
 
+    def delete_word(self):
+        try:
+            result = self.word_entry_manager.get_word_entries()
+        except BaseError as e:
+            logger.ERROR(f"Get all words error, message: {e}")
+            result = []
+        return result
+
